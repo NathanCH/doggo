@@ -1,0 +1,21 @@
+.Header{
+
+	height: 50px;
+	display: flex;
+
+	&__item{
+		flex-grow: 1;
+		text-align: center;
+		align-self: center;
+	}
+
+	&__brand{
+		flex-grow: 2;
+	}
+
+	&__button{
+		&--hidden{
+			display: none;
+		}
+	}	
+}

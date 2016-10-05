@@ -1,0 +1,13 @@
+@import "~normalize.css/normalize.css";
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Hind', sans-serif;
+	font-size: 18px;
+	line-height: 24px;
+	margin: 50px 100px;
+	background: #eee;
+}
