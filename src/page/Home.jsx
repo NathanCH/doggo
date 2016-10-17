@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
+import SwipeBox from '../component/SwipeBox.jsx';
+
 class Home extends Component {
 	render() {
 		return(
 			<div className="Home">
-				Cool content
+				<SwipeBox />
 			</div>
 		)
 	}

@@ -3,10 +3,12 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-	entry: path.resolve(__dirname, 'src') + '/index.jsx',
+	entry: [
+	],
 	output: {
 		path: path.resolve(__dirname, 'build'),
-		filename: 'bundle.js'
+		filename: 'bundle.js',
+		publicPath: 'http://localhost:3000/build/'
 	},
 	module: {
 		loaders: [
@@ -15,15 +17,14 @@ module.exports = {
 				include: path.resolve(__dirname, 'src'),
 				loader: ExtractTextPlugin.extract('css-loader!sass-loader')
 			},
-			{
-				test: /\.jsx$/,
-				loader: 'babel-loader',
-				query: {
-					presets: ['react', 'es2015']
-				}
+			{ 
+			 	test: /\.jsx?$/, 
+			 	loaders: ['react-hot', 'jsx-loader', 'babel-loader?presets[]=es2015&presets[]=react'], 
+			 	include: path.join(__dirname, 'src') 
 			}
 		]
 	},
+	watch: true,
 	resolve: {
 		extensions: ['', '.js', '.jsx']
 	},
@@ -38,6 +39,7 @@ module.exports = {
 				warnings: false
 			}
 		}),
-		new ExtractTextPlugin('styles.css')
+		new ExtractTextPlugin('styles.css'),
+		new webpack.HotModuleReplacementPlugin()
 	]
 };

@@ -1,0 +1,39 @@
+.Modal{
+
+	// Position
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	// Style
+	width: 250px;
+	background: white;
+	border: 1px solid #999;
+	border-radius: 5px;
+
+	&--hidden{
+		display: none;
+	}
+	&--clickable{
+		cursor: pointer;
+	}
+	&__header{
+		padding: 20px;
+		text-align: center;
+		line-height: 1.25em;
+	}
+	&__body{
+		padding: 10px;
+		display: flex;
+	}
+	&__option{
+		display: inline-block;
+		flex-grow: 1;
+		text-align: center;
+		padding: 20px;
+	}
+	&__icon{
+		font-size: 1.5em;
+	}
+}
